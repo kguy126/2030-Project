@@ -5,7 +5,8 @@ import Utilities.Address;
 import java.util.UUID;
 
 public class ParkingSpace {
-    private int parkingType, numParkingSpaces;
+    private String parkingType; 
+    private int numParkingSpaces;
     private Address address;
 
     public ParkingSpace(UUID uuid) {
