@@ -9,7 +9,7 @@ import java.io.IOException;
 public class MultipleListingService {
     public static void createMlsRecord(Land property) throws IOException {
         try {
-            FileWriter mls = new FileWriter("data/mls.txt");
+            FileWriter mls = new FileWriter("data/mls.txt",true); //
             mls.write(property.getMlsEntry() + "\n");
             mls.close(); // close file when done writing to it
         } catch (IOException err) {
