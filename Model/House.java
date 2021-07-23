@@ -73,7 +73,6 @@ public abstract class House extends Land implements Residential {
      *
      * @return an integer representing the number of parking spaces
      */
-    @Override
     public int getParkingSpacesCount() {
         return parkingSpaceCount;
     }
@@ -83,7 +82,6 @@ public abstract class House extends Land implements Residential {
      *
      * @param parkingSpacesCount an integer representing the number of parking spaces
      */
-    @Override
     public void setParkingSpacesCount(int parkingSpacesCount) {
         this.parkingSpaceCount = parkingSpacesCount;
     }
@@ -127,23 +125,21 @@ public abstract class House extends Land implements Residential {
     }
 
     /**
-     * method for updating the mlsEntry String in the Land super class with this subclass' attributes
-     * This class is intended to be extended and the mlsEntry will be further implemented as well
-     * This class begins the mlsEntry for its subclasses
+     * method to continue representing instantiated property's attributes as a String
+     * String is continued from Land superclass
+     * String will be continued by subclasses of House as well
+     * This because House class is abstract and not meant to be instantiated
+     *
+     * @return string representation of attributes
      */
     @Override
-    protected void updateMlsEntry() {
-        super.updateMlsEntry(); // begins string with the Land class' updateMlsEntry implementation
-        String toAdd = "";
-        toAdd += "Property Type: Residential House";
-        toAdd += this.isNewConstruction() ? ", Is new construction" : ", Is not new construction";
-        toAdd += ", Price: $" + this.getPrice();
-        toAdd += ", Bedrooms: " + this.getBedroomCount();
-        toAdd += ", Bathrooms: " + this.getBathroomCount();
-        toAdd += ", Floors: " + this.getFloorCount();
-        toAdd += ", Parking Spaces: " + this.getParkingSpacesCount();
-        this.addToMlsEntry(toAdd);
+    public String toString() {
+        return super.toString() +
+                ", bathroomCount=" + bathroomCount +
+                ", bedroomCount=" + bedroomCount +
+                ", floorCount=" + floorCount +
+                ", parkingSpaceCount=" + parkingSpaceCount +
+                ", isNewConstruction=" + isNewConstruction +
+                ", price=$" + price; // to be continued by subclasses
     }
-
-
 }

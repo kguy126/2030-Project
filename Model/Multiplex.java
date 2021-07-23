@@ -7,7 +7,6 @@ import java.util.UUID;
 public class Multiplex extends House implements Multifamily {
     // attributes unique to a multiplex property
     private int plexCount, familyCapacity;
-    private Address address;
 
     /**
      * constructor to set the uuid of the property
@@ -61,23 +60,18 @@ public class Multiplex extends House implements Multifamily {
     }
 
     /**
-     * method for updating the mlsEntry String in the Land super class with this subclass' attributes
-     * this method will call the House class' implementation of the method which calls the Land class' implementation
-     * in this way, the mlsEntry will consist of all the required attributes
-     * this class is not intended to be extended so the implementation will include a closing bracket '}' to end entry
+     * method to continue representing instantiated property's attributes as a String
+     * String is continued from House superclass
+     *
+     * @return string representation of attributes
      */
     @Override
-    public void updateMlsEntry() {
-        super.updateMlsEntry();
-        String toAdd = "";
-        toAdd += ", House Type: Multiplex (supports multiple families)";
-        toAdd += ", Living Area: " + this.getAddressObj().getLivingArea();
-        toAdd += ", School District: " + this.getAddressObj().getSchoolDistrict();
-        toAdd += ", Max Families Supported: " + this.familyCapacity;
-        toAdd += ", Multiplex Type: " + this.plexCount + "plex";
-        this.addToMlsEntry(toAdd + " }");
+    public String toString() {
+        return  this.plexCount + "plex{" +
+                super.toString() +
+                ", familyCapacity=" + familyCapacity +
+                '}';
     }
-
 
     /**
      * this class is meant to be instantiated (as its not an abstract)

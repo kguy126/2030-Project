@@ -55,20 +55,17 @@ public class TripleDecker extends House implements Multifamily {
     }
 
     /**
-     * method for updating the mlsEntry String in the Land super class with this subclass' attributes
-     * this method will call the House class' implementation of the method which calls the Land class' implementation
-     * in this way, the mlsEntry will consist of all the required attributes
-     * this class is not intended to be extended so the implementation will include a closing bracket '}' to end entry
+     * method to continue representing instantiated property's attributes as a String
+     * String is continued from House superclass
+     *
+     * @return string representation of attributes
      */
     @Override
-    public void updateMlsEntry() {
-        super.updateMlsEntry();
-        String toAdd = "";
-        toAdd += ", House Type: Triple Decker (supports multiple families)";
-        toAdd += ", Living Area: " + this.getAddressObj().getLivingArea();
-        toAdd += ", School District: " + this.getAddressObj().getSchoolDistrict();
-        toAdd += ", Max Families Supported: " + this.familyCapacity;
-        this.addToMlsEntry(toAdd + " }");
+    public String toString() {
+        return "TripleDecker{" +
+                super.toString() +
+                ", familyCapacity=" + familyCapacity +
+                '}';
     }
 
     public static class Builder {
