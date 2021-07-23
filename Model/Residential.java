@@ -16,10 +16,6 @@ public interface Residential {
 
     void setFloorCount(int floorCount);
 
-    int getParkingSpacesCount();
-
-    void setParkingSpacesCount(int parkingSpacesCount);
-
     double getPrice();
 
     void setPrice(double price);
