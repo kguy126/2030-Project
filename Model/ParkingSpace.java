@@ -74,6 +74,11 @@ public class ParkingSpace {
                 '}';
     }
 
+    /**
+     * this class is meant to be instantiated (as its not an abstract)
+     * a builder design patterns with all the required attributes is therefore implemented
+     * this allows for more simple instantiation for the client
+     */
     public static class Builder {
         // required attributes for instantiation
         private UUID uuid;
