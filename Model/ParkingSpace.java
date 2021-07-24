@@ -11,7 +11,6 @@ public class ParkingSpace {
 
     /**
      * constructor which will set the uuid
-     * method will also set the floorCount as 3 as it is a triple decker
      *
      * @param uuid identification for the property
      */
@@ -51,7 +50,7 @@ public class ParkingSpace {
     }
     
      /**
-     * method for getting the type of parking space (i.e., underground, garage, etc.)
+     * method for setting the type of parking space (i.e., underground, garage, etc.)
      *
      * @param parkingType string representing the type of parking
      */
