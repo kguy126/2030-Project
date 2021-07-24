@@ -152,7 +152,7 @@ public class ParkingSpace {
             return this;
         }
         
-            /**
+        /**
          * method for setting the size of the property in square meters
          *
          * @param size double representing size of property
