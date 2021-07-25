@@ -4,17 +4,18 @@ import Utilities.Address;
 
 import java.util.UUID;
 
-public class ParkingSpace {
+public class ParkingLot extends Land {
     // attributes unique to a parking space property
     private String parkingType; 
     private int numParkingSpaces;
+    private boolean isNewConstruction;
 
     /**
      * constructor which will set the uuid
      *
      * @param uuid identification for the property
      */
-    public ParkingSpace(UUID uuid) {
+    public ParkingLot(UUID uuid) {
         this.setUuid(uuid);
     }
     
@@ -44,7 +45,6 @@ public class ParkingSpace {
      *
      * @return string representing the type of parking
      */
-    @Override
     public String getParkingType() {
         return parkingType;
     }
@@ -54,11 +54,18 @@ public class ParkingSpace {
      *
      * @param parkingType string representing the type of parking
      */
-    @Override
     public void setParkingType(String parkingType) {
         this.parkingType = parkingType;
     }
-    
+
+    public boolean isNewConstruction() {
+        return isNewConstruction;
+    }
+
+    public void setNewConstruction(boolean newConstruction) {
+        isNewConstruction = newConstruction;
+    }
+
      /**
      * method to continue representing instantiated property's attributes as a String
      *
@@ -66,7 +73,7 @@ public class ParkingSpace {
      */
     @Override
     public String toString() {
-        return "ParkingSpace{" +
+        return "ParkingLot{" +
                 super.toString() +
                 ", parkingType=" + parkingType +
                 ", numParkingSpaces=" + numParkingSpaces +
@@ -84,8 +91,8 @@ public class ParkingSpace {
         private Address address;
         int numParkingSpaces;
         String parkingType;
-        double price;
         boolean isNewConstruction;
+        double sizeInSquareMeters;
 
         /**
          * constructor of Builder class to start with implementing the uuid
@@ -104,17 +111,6 @@ public class ParkingSpace {
          */
         public Builder locatedAt(Address address) {
             this.address = address;
-            return this;
-        }
-        
-        /**
-         * method for setting price
-         *
-         * @param price double representing price of property
-         * @return the Builder class itself for chaining and easier instantiation
-         */
-        public Builder pricedAt(double price) {
-            this.price = price;
             return this;
         }
          
@@ -160,24 +156,24 @@ public class ParkingSpace {
         public Builder withSizeInSquareMeters(double size) {
             this.sizeInSquareMeters = size;
             return this;
+        }
             
          /**
          * build method to be called after setting all attributes
-         * will create new ParkingSpace object and set its attributes
+         * will create new ParkingLot object and set its attributes
          * attributes are set based on that which are set in the Builder class
          * the object with set attributes is then returned
          *
-         * @return an object of ParkingSpace class
+         * @return an object of ParkingLot class
          */
         
-        public ParkingSpace build() {
-            parkingSpace parkingSpace = new ParkingSpace(this.uuid);
-            parkingSpace.setAddress(this.address);
-            parkingSpace.setPrice(this.price);
-            parkingSpace.setParkingType(this.parkingType);
-            parkingSpace.setSizeInSquareMeters(this.sizeInSquareMeters);
-            parkingSpace.setNumParkingSpaces(this.numParkingSpaces);
-            return parkingSpace;
+        public ParkingLot build() {
+            ParkingLot parkingLot = new ParkingLot(this.uuid);
+            parkingLot.setAddress(this.address);
+            parkingLot.setParkingType(this.parkingType);
+            parkingLot.setSizeInSquareMeters(this.sizeInSquareMeters);
+            parkingLot.setNumParkingSpaces(this.numParkingSpaces);
+            return parkingLot;
         }
     }
 }
