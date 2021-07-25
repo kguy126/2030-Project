@@ -6,7 +6,7 @@ public class Address {
     // Attributes related to an address
     // attributes are final as an address does not change
     private final int streetNumber;
-    private final String streetName, stateOrProvinceName, countryName, livingArea, schoolDistrict;
+    private final String streetName, stateOrProvinceName, countryName, cityName, livingArea, schoolDistrict;
 
     /**
      * copy constructor
@@ -20,6 +20,7 @@ public class Address {
         this.stateOrProvinceName = other.getStateOrProvinceName();
         this.livingArea = other.getLivingArea();
         this.schoolDistrict = other.getSchoolDistrict();
+        this.cityName = other.getCityName();
     }
 
     /**
@@ -36,6 +37,7 @@ public class Address {
                    String streetName,
                    String stateOrProvinceName,
                    String countryName,
+                   String cityName,
                    String livingArea,
                    String schoolDistrict) {
         if (streetNumber <= 0) throw new IllegalArgumentException("Street number must be a positive integer!");
@@ -43,6 +45,7 @@ public class Address {
         this.countryName = countryName;
         this.stateOrProvinceName = stateOrProvinceName;
         this.streetName = streetName;
+        this.cityName = cityName;
         this.livingArea = livingArea;
         this.schoolDistrict = schoolDistrict;
     }
@@ -102,12 +105,23 @@ public class Address {
     }
 
     /**
+     * method for getting the name of the city of the address
+     *
+     * @return String reporesenting city name
+     */
+    public String getCityName() { return cityName; }
+
+    /**
      * method for getting the address in a readable and standard String format
      *
      * @return String representing the official address
      */
-    public String getAddress() {
-        return streetNumber + " " + streetName + ", " + stateOrProvinceName + ", " + countryName;
+    @Override
+    public String toString() {
+        return this.streetNumber
+                + " " + this.streetName
+                + ", " + this.cityName
+                + ", " + this.stateOrProvinceName
+                + ", " + this.countryName;
     }
-
 }
