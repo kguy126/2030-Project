@@ -40,7 +40,7 @@ public class Apartment extends Land implements Residential {
      */
     @Override
     public void setBathroomCount(int bathroomCount) {
-
+        this.bathroom=bathroomCount;
     }
     /**
      * method for getting the No. of Bedrooms of the property
@@ -60,7 +60,7 @@ public class Apartment extends Land implements Residential {
      */
     @Override
     public void setBedroomCount(int bedroomCount) {
-
+            this.bedroom = bedroomCount;
     }
     /**
      * method for getting the No. of floors of the property
@@ -79,7 +79,7 @@ public class Apartment extends Land implements Residential {
      */
     @Override
     public void setFloorCount(int floorCount) {
-
+            this.floor = floorCount;
     }
     /**
      * method for getting the price of property
