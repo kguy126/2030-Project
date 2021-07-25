@@ -79,7 +79,7 @@ public class Apartment extends Land implements Residential {
      */
     @Override
     public void setFloorCount(int floorCount) {
-            this.floor = floorCount;
+            this.floorCount = floorCount;
     }
     /**
      * method for getting the price of property
