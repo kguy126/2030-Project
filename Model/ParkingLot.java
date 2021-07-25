@@ -57,10 +57,24 @@ public class ParkingLot extends Land {
     public void setParkingType(String parkingType) {
         this.parkingType = parkingType;
     }
+    
+    /**
+     * method for getting whether or not the property is new
+     *
+     * @param isNewConstruction boolean variable representing if this property is newly constructed
+     * @return isNewConstruction boolean variable representing if this property is newly constructed
+     */
 
     public boolean isNewConstruction() {
         return isNewConstruction;
     }
+    
+    /**
+     * method for setting whether or not the property is new
+     *
+     * @param isNewConstruction boolean variable representing if this property is newly constructed
+     *
+     */
 
     public void setNewConstruction(boolean newConstruction) {
         isNewConstruction = newConstruction;
